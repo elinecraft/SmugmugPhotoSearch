@@ -1,0 +1,87 @@
+<html>
+
+    <!---
+    Created by: Tristan Vanderluit
+    Elinecraft LLC
+    Please do not remove this line of credit. I dont ask for any other credit.
+    --->
+    
+    
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="http://v4.pingendo.com/assets/bootstrap/themes/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <img class="center-block img-fluid" src="1e5913_50d7c925cb934e51a28d98557bd67441-mv2.png">
+          <h1 class="">Contestant Photo Lookup</h1>
+          <form>
+            <div class="form-group">
+              <label>Contestant Number
+                <br>
+              </label>
+              <input type="text"
+                     name="q"
+                     id="q" 
+                     onkeydown="return checkEnter(event);"
+                     class="form-control search-query"
+                     placeholder="Rider number">
+              <input type="hidden" class="search-query" placeholder="Search" name="s" id="s" value="recent">
+              <input type="hidden" name="c" value="photos">
+            </div>
+              <button type="button" onsubmit="myFunction()" onclick="myFunction()" id="e3f" class="btn btn-primary">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p class="">If you need help on how to use this search box, or what number to search click the button and you be able to learn more.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12"><a href="help/" class="btn btn-danger">Help Me!</a></div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+
+  <!--- This is where you need to change stuff --->
+  <!--- Only change the yourdomain part in "https://yourdomain.smugmug.com/search/#?q=" -->
+  <script type="text/javascript">
+    function myFunction() {
+            var qsrch = document.getElementById("q").value;
+             var url = "https://yourdomain.smugmug.com/search/#?q=" + qsrch + "&s=recent&c=photos";
+             window.location.replace(url)
+            return false;
+            }
+ function checkEnter(event)
+{
+    if (event.keyCode == 13) 
+   {
+       myFunction();
+       return false;
+    }
+}
+
+</script>
+
+
+
+
+
+
+
+</body>
+
+</html>
